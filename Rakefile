@@ -17,8 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bovespa_historical"
   gem.homepage = "http://github.com/pirelenito/bovespa_historical"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Simple gem to parse the Bovespa historical files"
   gem.email = "paulo@pirelenito.org"
   gem.authors = ["Paulo Ragonha"]
   # dependencies defined in Gemfile
