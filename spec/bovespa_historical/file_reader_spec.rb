@@ -1,29 +1,16 @@
 describe 'BovespaHistorical.read_file' do
-  describe 'given one known test data' do
-    subject do
-      BovespaHistorical.read_file 'spec/test_data.txt'
+  describe 'given a file with one quote' do
+    it 'should invoke the given block with the parsed quote' do
+      count = 0
+      BovespaHistorical.read_file('spec/one_quote_data.txt') { |quote| quote[:symbol].should == 'VALE3'; count+=1 }
+      count.should == 1
     end
-  
-    it 'should have parsed 3 stocks' do
-      subject.length.should == 3
-    end
-  
-    it 'should have one the VALE3 quote' do
-      subject.select do |s| 
-        s.symbol == 'VALE3'
-      end.length.should == 1
-    end
-    
-    it 'should have one the VALE5 quote' do
-      subject.select do |s| 
-        s.symbol == 'VALE5'
-      end.length.should == 1
-    end
-    
-    it 'should have one the TMCP4F quote' do
-      subject.select do |s| 
-        s.symbol == 'TMCP4F'
-      end.length.should == 1
+  end
+  describe 'given a file with two quotes' do
+    it 'should invoke the given block with each of the two parsed quotes' do
+      quote_symbols = []
+      BovespaHistorical.read_file('spec/two_quotes_data.txt') { |quote| quote_symbols << quote[:symbol] }
+      quote_symbols.should == ['VALE3', 'RPSA4']
     end
   end
 end
