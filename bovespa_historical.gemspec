@@ -20,18 +20,21 @@ Gem::Specification.new do |s|
     ".rspec",
     ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bovespa_historical.gemspec",
     "lib/bovespa_historical.rb",
     "lib/bovespa_historical/file_reader.rb",
     "lib/bovespa_historical/line_parser.rb",
     "spec/bovespa_historical/file_reader_spec.rb",
     "spec/bovespa_historical/line_parser_spec.rb",
     "spec/bovespa_historical_spec.rb",
+    "spec/one_quote_data.txt",
     "spec/spec_helper.rb",
-    "spec/test_data.txt"
+    "spec/two_quotes_data.txt"
   ]
   s.homepage = %q{http://github.com/pirelenito/bovespa_historical}
   s.licenses = ["MIT"]
@@ -47,17 +50,20 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<mocha>, [">= 0"])
     else
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<mocha>, [">= 0"])
     end
   else
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<mocha>, [">= 0"])
   end
 end
 
