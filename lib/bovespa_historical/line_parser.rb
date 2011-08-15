@@ -6,6 +6,7 @@ module BovespaHistorical
     {
       :date => Date.parse("#{string[2..5]}-#{string[8..9]}-#{string[6..7]}"),
       :symbol => string[12..23].strip,
+      :market_type => string[24..26],
       :start_price => parse_float(string[56..68]),
       :max_price => parse_float(string[69..81]),
       :min_price => parse_float(string[82..94]),

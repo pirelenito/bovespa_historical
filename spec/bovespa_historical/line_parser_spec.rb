@@ -12,6 +12,7 @@ describe "BovespaHistorical.line_parser" do
     it { subject[:max_price].should == 105.01 }
     it { subject[:min_price].should == 102.5 }
     it { subject[:price].should == 103.21 }
+    it { subject[:market_type].should == '010' }
   end
   
   context 'given a header' do 
