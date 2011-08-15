@@ -7,7 +7,7 @@ describe "BovespaHistorical.line_parser" do
     subject { BovespaHistorical.parse_line(@line) }
 
     it { subject[:symbol].should == 'VALE3' }
-    it { subject[:date].should == Date.parse('2003-12-02') }
+    it { subject[:date].should == Date.parse('2003-02-12') }
     it { subject[:start_price].should == 105.01 }
     it { subject[:max_price].should == 105.01 }
     it { subject[:min_price].should == 102.5 }

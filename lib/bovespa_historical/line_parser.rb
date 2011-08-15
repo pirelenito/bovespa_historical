@@ -4,7 +4,7 @@ module BovespaHistorical
   def self.parse_line(string)
     return unless quote_registry? string
     {
-      :date => Date.parse("#{string[2..5]}-#{string[8..9]}-#{string[6..7]}"),
+      :date => Date.parse("#{string[2..5]}-#{string[6..7]}-#{string[8..9]}"),
       :symbol => string[12..23].strip,
       :market_type => string[24..26],
       :start_price => parse_float(string[56..68]),
